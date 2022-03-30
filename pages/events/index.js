@@ -12,10 +12,10 @@ function AllEventsPage(props) {
 
   function findEventsHandler(year, month) {
     const fullPath = `/events/${year}/${month}`;
-
     router.push(fullPath);
   }
 
+  //Next merges the Heads in a single one and resolved the conflicts on the same elements when takes the latest element to add in the html content 
   return (
     <Fragment>
       <Head>
