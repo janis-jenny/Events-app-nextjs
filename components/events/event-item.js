@@ -14,12 +14,13 @@ function EventItem(props) {
     month: 'long',
     year: 'numeric',
   });
-  // const formattedAddress = location.replace(', ', '\n');
+  const formattedAddress = location.replace(', ', '\n');
   const exploreLink = `/events/${id}`;
 
   return (
     <li className={classes.item}>
-      <Image src={'/' + image} alt={title} width={250} height={160} />
+      <Image src={'/' + image} alt={title} width={250} height={160} priority />
+      {/* this is for size optimization & lazy loading, we're generating images when we need them not in advance, but when a request reaches the page */}
       <div className={classes.content}>
         <div className={classes.summary}>
           <h2>{title}</h2>
@@ -29,7 +30,7 @@ function EventItem(props) {
           </div>
           <div className={classes.address}>
             <AddressIcon />
-            {/* <address>{formattedAddress}</address> */}
+            <address>{formattedAddress}</address>
           </div>
         </div>
         <div className={classes.actions}>
