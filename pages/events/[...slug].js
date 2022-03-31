@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
+// import useSWR from 'swr';
 import Head from 'next/head';
 
 import { getFilteredEvents } from '../../helpers/api-util';
@@ -20,7 +20,7 @@ function FilteredEventsPage(props) {
     'https://next-events-7ff55-default-rtdb.firebaseio.com/events.json'
   ); */
 
-/*   useEffect(() => {
+  /*   useEffect(() => {
     if (data) {
       const events = [];
 
@@ -34,7 +34,7 @@ function FilteredEventsPage(props) {
       setLoadedEvents(events);
     }
   }, [data]);
- */
+  */
   let pageHeadData = (
     <Head>
       <title>Filtered Events</title>
@@ -51,7 +51,7 @@ function FilteredEventsPage(props) {
     );
   }
 
-/*   const filteredYear = filterData[0];
+/* const filteredYear = filterData[0];
   const filteredMonth = filterData[1];
 
   const numYear = +filteredYear;
@@ -148,7 +148,7 @@ export async function getServerSideProps(context) { // fetch data on every incom
         props: { hasError: true }, // will pass this specific props in the component to show  a error message jsx code
         // notFound: true, // show 404 page
         // redirect: {
-        //   destination: '/error'
+        // destination: '/error'
         // }
       };
   }
