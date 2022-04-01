@@ -11,27 +11,28 @@ function Comments(props) {
 
   useEffect(() => {
     if (showComments) {
-      fetch('/api/comments' + eventId)
+      fetch('/api/comments/' + eventId)
         .then((response) => response.json())
         .then((data) => {
           setComments(data.comments);
-        })
+        });
     }
-  }, [showComments])
+  }, [showComments]);
 
   function toggleCommentsHandler() {
     setShowComments((prevStatus) => !prevStatus);
   }
 
   function addCommentHandler(commentData) {
-    // send data to API
     fetch('/api/comments/' + eventId, {
       method: 'POST',
       body: JSON.stringify(commentData),
-      headers: { contentType: 'application/json'}
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
-      .then(response => response.json())
-      .then(data => console.log(data))
+      .then((response) => response.json())
+      .then((data) => console.log(data));
   }
 
   return (
