@@ -4,7 +4,7 @@ import classes from './newsletter-registration.module.css';
 import NotificationContext from '../../store/notification-context';
 
 function NewsletterRegistration() {
-  const emailInputRef = useRef();ç
+  const emailInputRef = useRef();
   const notificationCtx = useContext(NotificationContext);
 
   function registrationHandler(event) {

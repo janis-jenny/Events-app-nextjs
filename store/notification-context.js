@@ -19,6 +19,7 @@ export function NotificationContextProvider(props) { // will manage the state th
         setActiveNotification(null);
       }, 3000);
 
+      // clean up fucntion to prevent multiple ongoing timers at the same time if useEffect rerun befor timer went off
       return () => {
         clearTimeout(timer);
       };
@@ -34,7 +35,7 @@ export function NotificationContextProvider(props) { // will manage the state th
   }
 
   // bundle in one object my notification data and pointers of this functions handlers show and hide
-  // it will be distribute it to the other components
+  // it will be distribute it to the other components on the provider component
   const context = {
     notification: activeNotification,
     showNotification: showNotificationHandler,
