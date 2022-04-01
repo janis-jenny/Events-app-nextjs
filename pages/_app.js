@@ -5,8 +5,9 @@ import '../styles/globals.css';
 // we can give all pages a general title and meta elements, that will be overwritten by the specific data.
 
 function MyApp({ Component, pageProps }) {
+  // layout is wrapper for visual content
   return (
-    <Layout>
+    <Layout> 
       <Head>
         <title>Next Events</title>
         <meta
@@ -23,5 +24,5 @@ function MyApp({ Component, pageProps }) {
     </Layout>
   );
 }
-
+// dont use context provider because it will no wrapped the components only the jsx code execute it here
 export default MyApp;
